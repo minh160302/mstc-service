@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: mstc-service
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/mstc
+      field-naming-strategy: org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategy
+
+
+server:
+  port: 8000
