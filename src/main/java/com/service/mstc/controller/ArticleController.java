@@ -20,6 +20,10 @@ public class ArticleController {
     return articleService.get(pageableDto);
   }
 
+  @GetMapping("/{id}")
+  public Article getById(@PathVariable String id){
+    return articleService.getById(id);
+  }
 
   @GetMapping("/slug/{slug}")
   public Article getBySlug(@PathVariable String slug){

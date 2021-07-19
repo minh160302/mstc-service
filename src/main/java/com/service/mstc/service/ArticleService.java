@@ -2,7 +2,6 @@ package com.service.mstc.service;
 
 import com.service.mstc.dto.PageStatusDto;
 import com.service.mstc.dto.common.DataListDto;
-import com.service.mstc.dto.common.PageableDto;
 import com.service.mstc.model.Article;
 
 public interface ArticleService {
@@ -15,4 +14,6 @@ public interface ArticleService {
   Article getBySlug(String slug);
 
   DataListDto get(PageStatusDto pageableDto);
+
+  Article getById(String id);
 }

@@ -13,6 +13,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ArticleServiceImpl implements ArticleService {
@@ -52,9 +54,15 @@ public class ArticleServiceImpl implements ArticleService {
   public Article update(Article article) {
     articleRepository.findById(article.getId()).orElseThrow(() -> new BadRequestException("Article not found!"));
 
-    articleRepository.findBySlug(article.getSlug()).ifPresent(item -> {
-      throw new BadRequestException("Slug:: " + item.getSlug() + " is already in use!");
-    });
+    List<Article> articleList = articleRepository.findAll()
+            .stream()
+            .filter(at -> !at.getId().equals(article.getId())).collect(Collectors.toList());
+
+    for(Article item: articleList){
+      if(item.getSlug().equals(article.getSlug())){
+        throw new BadRequestException("Slug: " + item.getSlug() + " is already in use!");
+      }
+    }
 
     article.setUpdatedDate(Instant.now());
     return articleRepository.save(article);
@@ -72,4 +80,9 @@ public class ArticleServiceImpl implements ArticleService {
     return articleRepository.findBySlug(slug).orElseThrow(() -> new BadRequestException("Article not found!"));
   }
 
+
+  @Override
+  public Article getById(String id) {
+    return articleRepository.findById(id).orElseThrow(() -> new BadRequestException("Article not found!"));
+  }
 }
