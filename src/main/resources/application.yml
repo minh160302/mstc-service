@@ -7,6 +7,29 @@ spring:
       uri: mongodb://localhost:27017/mstc
       field-naming-strategy: org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategy
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: minh160302@gmail.com
+    password: Nguyencanhminh-160302
+    protocol: smtp
+    test-connection: false
+    default-encoding: UTF-8
+    properties:
+      mail:
+        debug: true
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+
+  thymeleaf:
+    cache: false
+    prefix: classpath:/mails/
+    suffix: .html
+    encoding: UTF-8
+
 
 server:
   port: 8000
