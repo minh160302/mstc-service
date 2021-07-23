@@ -4,7 +4,7 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb+srv://minh160302:Canhminh-160302@cluster0.zimve.mongodb.net/mstc
+      uri: mongodb+srv://minh160302:Canhminh-160302@cluster0.zimve.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
       field-naming-strategy: org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategy
 
   mail:
