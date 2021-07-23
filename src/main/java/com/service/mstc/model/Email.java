@@ -15,7 +15,7 @@ import java.time.Instant;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document("emails")
-public class NewsLetter {
+public class Email {
   @Id
   private String id;
 
