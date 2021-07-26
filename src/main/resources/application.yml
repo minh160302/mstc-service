@@ -7,6 +7,7 @@ spring:
       uri: mongodb+srv://minh160302:Canhminh-160302@cluster0.zimve.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
       field-naming-strategy: org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategy
       database: mstc
+#      uri: mongodb://localhost:27017/mstc
 
   mail:
     host: smtp.gmail.com
@@ -31,6 +32,19 @@ spring:
     suffix: .html
     encoding: UTF-8
 
+  servlet:
+    multipart:
+      max-file-size: 6MB
+      max-request-size: 6MB
+
 
 server:
   port: 8000
+
+
+##config aws s3
+#aws:
+#  s3:
+#    access-key: AKIAXORINMPXCK56BCVH
+#    secret-key: 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
+#    bucket-name: mstc-bucket
