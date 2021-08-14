@@ -1,7 +1,5 @@
 package com.service.mstc.repository;
 
-import com.service.mstc.dto.PageStatusDto;
-import com.service.mstc.dto.common.DataListDto;
 import com.service.mstc.enums.Status;
 import com.service.mstc.model.Article;
 import org.springframework.data.domain.Page;
